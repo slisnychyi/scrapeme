@@ -30,14 +30,14 @@ public class Runner implements CommandLineRunner {
         driver.get("https://example.com");
         WebElement element = driver.findElement(By.xpath("/html/body/div/p[2]/a"));
 
-        System.out.println(element.getText() + getToken());
+        System.out.println(element.getText());
 
         driver.close();
         driver.quit();
     }
 
-    private String getToken() throws IOException {
-        Process process = Runtime.getRuntime().exec("stoken tokencode");
-        return new BufferedReader(new InputStreamReader(process.getInputStream())).readLine();
-    }
+//    private String getToken() throws IOException {
+//        Process process = Runtime.getRuntime().exec("stoken tokencode");
+//        return new BufferedReader(new InputStreamReader(process.getInputStream())).readLine();
+//    }
 }
