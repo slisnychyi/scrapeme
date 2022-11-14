@@ -11,5 +11,9 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
-      - name: Build with Gradle
-        run: echo ${{ secrets.MY_SECRET }}
+      - name: Build with Mvn
+        run: ./mvnw clean package
+      - name: Build image
+        run: docker build -t scrape2 .
+      - name: Image run
+        run: docker run scrape2
