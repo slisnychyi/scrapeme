@@ -28,7 +28,7 @@ jobs:
         run: docker build -t slisnychyi/scrape2 .
       - name: Image run
         if: github.ref != 'refs/heads/master'
-        run: docker run scrape2
+        run: docker run slisnychyi/scrape2
       - name: Image push
         if: github.ref == 'refs/heads/master'
         run: docker push slisnychyi/scrape2
