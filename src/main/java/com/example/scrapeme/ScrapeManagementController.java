@@ -10,16 +10,17 @@ import java.io.IOException;
 @RestController
 @RequestMapping("/api/v1/scrape")
 public class ScrapeManagementController {
-    private final ScraperService scraperService;
 
-    public ScrapeManagementController(ScraperService scraperService) {
-        this.scraperService = scraperService;
-    }
+  private final ScraperService scraperService;
 
+  public ScrapeManagementController(ScraperService scraperService) {
+    this.scraperService = scraperService;
+  }
 
-    @GetMapping("/{tokenString}")
-    public String getData(@PathVariable("tokenString") String tokenString) throws IOException {
-        return scraperService.scrape(tokenString);
-    }
+  @GetMapping("/{tokenString}")
+  public String getData(@PathVariable("tokenString") String tokenString) throws IOException {
+    System.out.println("received request with token = " + tokenString);
+    return scraperService.scrape(tokenString);
+  }
 
 }
