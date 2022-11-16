@@ -29,6 +29,8 @@ public class ScraperService {
 
         String result = element.getText() + getToken(token);
 
+        System.out.println("generated result : " + result);
+
         driver.close();
         driver.quit();
 
